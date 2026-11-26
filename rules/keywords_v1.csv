@@ -1,0 +1,1009 @@
+keyword,score,category,source
+立即點擊,20,Malicious Link,manual
+帳號鎖定,20,Brand Impersonation,manual
+密碼過期,20,Brand Impersonation,manual
+重新驗證,20,Credential Phishing,manual
+重要更新,20,Brand Impersonation,manual
+提供您的,20,Credential Phishing,manual
+信用卡,20,BEC,manual
+匯款,20,BEC,manual
+機密資訊,20,Credential Phishing,manual
+緊急,15,BEC,manual
+限時處理,15,BEC,manual
+通知,15,Brand Impersonation,manual
+發票,15,BEC,manual
+未付款,15,BEC,manual
+需要行動,15,BEC,manual
+文件,15,Malicious Link,manual
+附件,15,Malicious Link,manual
+服務申請,15,Credential Phishing,manual
+新訊息,10,General,manual
+最新消息,10,General,manual
+中獎,10,General,manual
+優惠,10,General,manual
+親愛的用戶,10,General,manual
+access,20,Credential Phishing,manual
+account locked,20,Brand Impersonation,manual
+security alert,20,Brand Impersonation,manual
+account expired,20,Brand Impersonation,manual
+authentication,20,Credential Phishing,manual
+authorize,20,Credential Phishing,manual
+biometrics,20,Credential Phishing,manual
+confidentiality,20,Credential Phishing,manual
+credential,20,Credential Phishing,manual
+deposit,20,BEC,manual
+finance,20,BEC,manual
+identity,20,Credential Phishing,manual
+login,20,Credential Phishing,manual
+password,20,Credential Phishing,manual
+payoff,20,BEC,manual
+payment,20,BEC,manual
+paypal,20,Brand Impersonation,manual
+purchase,20,BEC,manual
+reimbursement,20,BEC,manual
+secure,20,Brand Impersonation,manual
+token,20,Credential Phishing,manual
+transaction,20,BEC,manual
+wire,20,BEC,manual
+wiring,20,BEC,manual
+icloud,20,Brand Impersonation,manual
+bank,20,Brand Impersonation,manual
+limited time,20,BEC,manual
+action,20,BEC,manual
+confirm,20,Credential Phishing,manual
+validate,20,Credential Phishing,manual
+verify,20,Credential Phishing,manual
+accounts,15,Credential Phishing,manual
+account,15,Credential Phishing,manual
+accountinfo,15,Credential Phishing,manual
+admin,15,Brand Impersonation,manual
+alert,15,Brand Impersonation,manual
+balance,15,BEC,manual
+billing,15,BEC,manual
+billinginfo,15,BEC,manual
+cancel,15,BEC,manual
+charge,15,BEC,manual
+confirmation,15,Credential Phishing,manual
+doc,15,Malicious Link,manual
+file,15,Malicious Link,manual
+invoice,15,BEC,manual
+invoiceinfo,15,BEC,manual
+loan,15,BEC,manual
+notify,15,Brand Impersonation,manual
+notification,15,Brand Impersonation,manual
+order,15,BEC,manual
+orderinfo,15,BEC,manual
+pdf,15,Malicious Link,manual
+request,15,Credential Phishing,manual
+shipment,15,BEC,manual
+suspicious,15,Brand Impersonation,manual
+update,15,Brand Impersonation,manual
+upgrade,15,Brand Impersonation,manual
+view,15,Malicious Link,manual
+assurance,10,General,manual
+availability,10,General,manual
+check,10,General,manual
+details,10,General,manual
+information,10,General,manual
+key,10,General,manual
+lock,10,General,manual
+mail,10,General,manual
+mailbox,10,General,manual
+message,10,General,manual
+messages,10,General,manual
+new,10,General,manual
+online,10,General,manual
+org,10,General,manual
+privacy,10,General,manual
+privilege,10,General,manual
+profile,10,General,manual
+receipt,10,BEC,manual
+remittance,10,BEC,manual
+reward,10,General,manual
+safety,10,General,manual
+sent,10,General,manual
+session,10,General,manual
+statement,10,BEC,manual
+subscription,10,BEC,manual
+trust,10,General,manual
+use,10,General,manual
+user,10,General,manual
+validation,10,General,manual
+assistant,10,General,manual
+company,10,General,manual
+communication,10,General,manual
+contact,10,General,manual
+customer,10,General,manual
+dashboard,10,General,manual
+email,10,General,manual
+emails,10,General,manual
+help,10,General,manual
+manager,10,General,manual
+portal,10,General,manual
+service,10,General,manual
+services,10,General,manual
+server,10,General,manual
+team,10,General,manual
+support,10,General,manual
+ACH,10,BEC,manual
+folio,10,BEC,manual
+received,10,General,manual
+rights,10,General,manual
+reserved,10,General,manual
+ukqdrblkougooeoffnxsmbowei,20,Malicious Link,tfidf
+//members.aol.com/tjoyce/mail_.gif,20,Malicious Link,tfidf
+hwawrlgiooooqvjoii,20,Malicious Link,tfidf
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,20,Malicious Link,tfidf
+//www.sqlcare.com/images/sql_.gif,20,Malicious Link,tfidf
+//xent.com/mailman/listinfo/fork,20,Malicious Link,tfidf
+naked,20,Malicious Link,tfidf
+//www.virtuagirl.com/data/tour/postcard/postcard_.gif,20,Malicious Link,tfidf
+click,20,Malicious Link,tfidf
+//admanmail.com/ads/bottomline/imgs/mailva_.gif,20,Malicious Link,tfidf
+//www.bd.com/doublepcspeed/spacer.gif,20,Malicious Link,tfidf
+//www.jeweldive.com,20,Malicious Link,tfidf
+watchdog,20,General,tfidf
+http,20,Malicious Link,tfidf
+broadcast,20,General,tfidf
+job,20,BEC,tfidf
+property,20,BEC,tfidf
+ebay,20,Brand Impersonation,tfidf
+grant,20,BEC,tfidf
+//theadmanager.com/ads/bottomline/imgs/mailvc_.gif,20,Malicious Link,tfidf
+opt-out,20,Malicious Link,tfidf
+bread,20,General,tfidf
+amateur,20,Malicious Link,tfidf
+/personal/justporno/b.jpg,20,Malicious Link,tfidf
+worm,20,Malicious Link,tfidf
+try,20,General,tfidf
+ojicdv,20,General,tfidf
+multimedia,20,General,tfidf
+pasiqt,20,General,tfidf
+xefkqb,20,General,tfidf
+ddydli,20,General,tfidf
+lmprmp,20,General,tfidf
+wxytry,20,General,tfidf
+tblattern,20,General,tfidf
+twirbelsturm,20,General,tfidf
+blattern,20,General,tfidf
+xjdehix,20,General,tfidf
+//luenpo.wwwmedbeds.com,20,Malicious Link,tfidf
+//rir.medicalcoeds.com,20,Malicious Link,tfidf
+//nakseh.cn/a/,20,Malicious Link,tfidf
+//mirvop.cn/v/,20,Malicious Link,tfidf
+//biky.electricmodern.com,20,Malicious Link,tfidf
+bonus,20,BEC,tfidf
+//koveno.mededsynergy.com,20,Malicious Link,tfidf
+//jqp.electricmodern.com,20,Malicious Link,tfidf
+//mohio.operateneck.com,20,Malicious Link,tfidf
+rtaozcs,20,General,tfidf
+//rv.wallenough.com,20,Malicious Link,tfidf
+//ad.mededsynergy.com,20,Malicious Link,tfidf
+wissen,20,General,tfidf
+//www.cnn.com/video/partners/efbabaeebeaf/index.html,20,Malicious Link,tfidf
+//apott.naturemay.com,20,Malicious Link,tfidf
+//spivaka.cn/v/,20,Malicious Link,tfidf
+mujfmoh,20,General,tfidf
+//owejz.noticesight.com,20,Malicious Link,tfidf
+kxfrjws,20,General,tfidf
+//ua.tallraise.com,20,Malicious Link,tfidf
+dfiakex,20,General,tfidf
+www.yessash.com,20,Malicious Link,tfidf
+//odx.wallenough.com,20,Malicious Link,tfidf
+//ojqpf.operateneck.com,20,Malicious Link,tfidf
+//bunjax.cn/a/,20,Malicious Link,tfidf
+someone,20,General,tfidf
+//www.flagfeel.com/,20,Malicious Link,tfidf
+ftjthrp,20,General,tfidf
+synjhnb,20,General,tfidf
+wzzrrks,20,General,tfidf
+//demiqaq.cn/v/,20,Malicious Link,tfidf
+sextape,20,Malicious Link,tfidf
+//exays.readygave.com,20,Malicious Link,tfidf
+//una.callfig.com,20,Malicious Link,tfidf
+llfwedc,20,General,tfidf
+grvnokm,20,General,tfidf
+//runlyr.cn/v/,20,Malicious Link,tfidf
+jsoukhh,20,General,tfidf
+jtiqgwz,20,General,tfidf
+vftrovi,20,General,tfidf
+omifrhp,20,General,tfidf
+//sjminf.wwwmedbeds.com,20,Malicious Link,tfidf
+xhbpfhf,20,General,tfidf
+ypmrfnr,20,General,tfidf
+ursdswa,20,General,tfidf
+//weipi.cybermeded.com,20,Malicious Link,tfidf
+volmafw,20,General,tfidf
+gozehkl,20,General,tfidf
+moneybackpolicyemedsfriendlysupport,20,Malicious Link,tfidf
+toallcountriesfdaapprovednewproducts,20,Malicious Link,tfidf
+onlinedrugstorevisaacceptedcanadian,20,Malicious Link,tfidf
+shippingnewofferpharmacy,20,Malicious Link,tfidf
+ordernowtoallcountriesworldwideshipping,20,Malicious Link,tfidf
+pillsordernowyourhealth,20,Malicious Link,tfidf
+ordernowtoallcountriesforcustomers,20,Malicious Link,tfidf
+worldwideonlinedrugstoreallproducts,20,Malicious Link,tfidf
+fastshippingemedscanadian,20,Malicious Link,tfidf
+healthylifeforcustomersavailable,20,Malicious Link,tfidf
+//udebu.brightbreak.com,20,Malicious Link,tfidf
+gladness,20,General,tfidf
+//kpccva.setnation.com,20,Malicious Link,tfidf
+//xyc.prosperityanger.com,20,Malicious Link,tfidf
+//vpql.setnation.com,20,Malicious Link,tfidf
+//dy.setnation.com,20,Malicious Link,tfidf
+//yszr.prosperityanger.com,20,Malicious Link,tfidf
+//u.bornforgiveness.com,20,Malicious Link,tfidf
+//lsbxv.motivationball.com,20,Malicious Link,tfidf
+//wv.shallstraight.com,20,Malicious Link,tfidf
+//zw.motivationball.com,20,Malicious Link,tfidf
+//dp.dictionarybrown.com,20,Malicious Link,tfidf
+//wga.dictionarybrown.com,20,Malicious Link,tfidf
+worldwideordernowwelcome,20,Malicious Link,tfidf
+viagrahealthylifecialis,20,Malicious Link,tfidf
+yourhealthspecialpricestoallcountries,20,Malicious Link,tfidf
+uslicensedspecialpricesthankyou,20,Malicious Link,tfidf
+forvaluedcustomerinfopharmacy,20,Malicious Link,tfidf
+welcomefdaapprovedmeds,20,Malicious Link,tfidf
+remedynewproductsforvaluedcustomer,20,Malicious Link,tfidf
+bestsellersproductsinternetprices,20,Malicious Link,tfidf
+phentriminemgremedy,20,Malicious Link,tfidf
+shippingforvaluedcustomerhealthylife,20,Malicious Link,tfidf
+//bttliu.electricmodern.com,20,Malicious Link,tfidf
+//www.pacewall.com/,20,Malicious Link,tfidf
+//ubseb.cleartradition.com,20,Malicious Link,tfidf
+//qr.pushyet.com,20,Malicious Link,tfidf
+//qananl.dictionarybrown.com,20,Malicious Link,tfidf
+//vgvum.prosperityanger.com,20,Malicious Link,tfidf
+//sok.winforgiveness.com,20,Malicious Link,tfidf
+//wotkhj.evenharmony.com,20,Malicious Link,tfidf
+//jff.motivationball.com,20,Malicious Link,tfidf
+//st.motivationball.com,20,Malicious Link,tfidf
+//urx.medicalcoeds.com,20,Malicious Link,tfidf
+effectivenessremedyonlinedrugstore,20,Malicious Link,tfidf
+customersupportproductlistproducts,20,Malicious Link,tfidf
+friendlysupportfastshippingforcustomers,20,Malicious Link,tfidf
+uslicensedbestqualitymg,20,Malicious Link,tfidf
+ordernowpillsuslicensed,20,Malicious Link,tfidf
+visaaccepteduslicensedpharmacy,20,Malicious Link,tfidf
+customersupportavailableworldwideshipping,20,Malicious Link,tfidf
+addtocartordernowpharmacy,20,Malicious Link,tfidf
+yourhealthcialisforvaluedcustomer,20,Malicious Link,tfidf
+friendlysupportinternetpricesremedy,20,Malicious Link,tfidf
+productlistbestsellerseffectiveness,20,Malicious Link,tfidf
+newproductstoallcountriesinternationalpharmacy,20,Malicious Link,tfidf
+healthylifespecialpricesuslicensed,20,Malicious Link,tfidf
+welcomesofttabsavailable,20,Malicious Link,tfidf
+canadianmoreinfointernationalpharmacy,20,Malicious Link,tfidf
+effectivenesspharminternetprices,20,Malicious Link,tfidf
+internationalpharmacyfdaapprovedforourcustomers,20,Malicious Link,tfidf
+healthtoallcountriesaddtocart,20,Malicious Link,tfidf
+//irqoky.hotvary.com,20,Malicious Link,tfidf
+//ut.brightbreak.com,20,Malicious Link,tfidf
+well-being,20,General,tfidf
+//hr.evenharmony.com,20,Malicious Link,tfidf
+//ulqwv.happinessjoy.com,20,Malicious Link,tfidf
+//lvjyt.prosperityanger.com,20,Malicious Link,tfidf
+//wtoi.dictionarybrown.com,20,Malicious Link,tfidf
+//tjqptw.startoccur.com,20,Malicious Link,tfidf
+//ff.bornforgiveness.com,20,Malicious Link,tfidf
+//xuz.prosperityanger.com,20,Malicious Link,tfidf
+//iulif.pushyet.com,20,Malicious Link,tfidf
+//uwavic.bornforgiveness.com,20,Malicious Link,tfidf
+//tsbkh.pushyet.com,20,Malicious Link,tfidf
+//u.pushyet.com,20,Malicious Link,tfidf
+//ug.pushyet.com,20,Malicious Link,tfidf
+//peqpg.cleartradition.com,20,Malicious Link,tfidf
+visaacceptedforourcustomershealth,20,Malicious Link,tfidf
+shippingaddtocartforvaluedcustomer,20,Malicious Link,tfidf
+certifiedmoneybackpolicyfastshipping,20,Malicious Link,tfidf
+uslicensedthankyouaddtocart,20,Malicious Link,tfidf
+internationalpharmacyuslicensedmoneybackpolicy,20,Malicious Link,tfidf
+internationalpharmacyproductlistviagra,20,Malicious Link,tfidf
+safesecurehealt,20,Malicious Link,tfidf
+lst,20,General,tfidf
+nbsp,20,General,tfidf
+lowland,20,General,tfidf
+infoseek,20,Brand Impersonation,tfidf
+ukp,20,General,tfidf
+cocosda,20,General,tfidf
+elsnet,20,General,tfidf
+shor,20,General,tfidf
+agfl,20,General,tfidf
+lifeplan,20,General,tfidf
+humor,20,General,tfidf
+hollander,20,General,tfidf
+ippe,20,General,tfidf
+tei,20,General,tfidf
+coffee,20,General,tfidf
+braille,20,General,tfidf
+onlinenow,20,General,tfidf
+encyclopedia,20,General,tfidf
+iii,20,General,tfidf
+tutorial,20,General,tfidf
+portuguese,20,General,tfidf
+korean,20,General,tfidf
+photomask,20,General,tfidf
+csdl,20,General,tfidf
+sakao,20,General,tfidf
+diagram,20,General,tfidf
+plurabelle,20,General,tfidf
+efznyauqemlj,20,General,tfidf
+name,20,General,tfidf
+tuanunciogratis,20,General,tfidf
+nerissa,20,General,tfidf
+nhkyexpwylwm,20,General,tfidf
+bitnet,20,General,tfidf
+daggermove,20,General,tfidf
+look,20,General,tfidf
+bodyhtml,20,Malicious Link,tfidf
+jeromy,20,General,tfidf
+goodbye,20,General,tfidf
+hassan,20,General,tfidf
+vaudevillemove,20,General,tfidf
+buy,20,BEC,tfidf
+rawmnv,20,General,tfidf
+gbhzivjwl,20,General,tfidf
+unsubscribe,20,Malicious Link,tfidf
+remove,20,General,tfidf
+leora,20,General,tfidf
+unsub,20,Malicious Link,tfidf
+trehala,20,General,tfidf
+interested,20,General,tfidf
+sft,20,General,tfidf
+word,20,General,tfidf
+aqaqkbwlzzcease,20,General,tfidf
+tororane,20,General,tfidf
+gouranga,20,General,tfidf
+edrugs,20,Malicious Link,tfidf
+erp,20,General,tfidf
+mzsocmramove,20,General,tfidf
+addio,20,General,tfidf
+aburz,20,General,tfidf
+mainoemstore,20,Brand Impersonation,tfidf
+alon,20,General,tfidf
+sode,20,General,tfidf
+politi,20,General,tfidf
+rolex,20,Brand Impersonation,tfidf
+sdmidrxvxnto,20,General,tfidf
+bye,20,General,tfidf
+ello,20,General,tfidf
+eshopkey,20,General,tfidf
+adiu,20,General,tfidf
+jdno,20,General,tfidf
+mshvidobit,20,General,tfidf
+cassiopay,20,BEC,tfidf
+agaln,20,General,tfidf
+censusinternet,20,General,tfidf
+vastomazonok,20,General,tfidf
+sclbe,20,General,tfidf
+missed,20,General,tfidf
+generlc,20,Malicious Link,tfidf
+cibres,20,General,tfidf
+article,20,General,tfidf
+laptop,20,General,tfidf
+yokwe,20,General,tfidf
+xaawa,20,General,tfidf
+esecure,20,Brand Impersonation,tfidf
+petzoldt,20,General,tfidf
+vcd,20,General,tfidf
+yimix,20,General,tfidf
+portrait,20,General,tfidf
+shaquana,20,General,tfidf
+teen,20,Malicious Link,tfidf
+matayaa,20,General,tfidf
+creoleart,20,General,tfidf
+pill,20,Malicious Link,tfidf
+rolete,20,General,tfidf
+usb,20,General,tfidf
+summerholidays,20,General,tfidf
+wakey,20,General,tfidf
+megola,20,General,tfidf
+chang,20,General,tfidf
+dovizhdane,20,General,tfidf
+southtrust,20,Brand Impersonation,tfidf
+dag,20,General,tfidf
+credit,20,BEC,tfidf
+call,20,General,tfidf
+requested,20,General,tfidf
+mirror,20,General,tfidf
+nostradamus,20,General,tfidf
+workmiracle,20,General,tfidf
+easyadpost,20,Malicious Link,tfidf
+nowbuy,20,BEC,tfidf
+wallet,20,BEC,tfidf
+domain,20,General,tfidf
+eurovision,20,General,tfidf
+jobslog,20,General,tfidf
+removed,20,General,tfidf
+citibank,20,Brand Impersonation,tfidf
+insurance,20,BEC,tfidf
+preference,20,General,tfidf
+yfdjedbe,20,General,tfidf
+wqxtxqft,20,General,tfidf
+baidh,20,General,tfidf
+rnd,20,General,tfidf
+camera,20,General,tfidf
+chinese,20,General,tfidf
+aldwark,20,General,tfidf
+flzrnevg,20,General,tfidf
+rfjitrbj,20,General,tfidf
+halal,20,General,tfidf
+penls,20,Malicious Link,tfidf
+videodate,20,Malicious Link,tfidf
+repect,20,General,tfidf
+roiex,20,Brand Impersonation,tfidf
+snuffle,20,General,tfidf
+hoscakal,15,General,tfidf
+pleaseclick,15,Malicious Link,tfidf
+cuidate,15,General,tfidf
+areaclick,15,Malicious Link,tfidf
+cyanic,15,General,tfidf
+adobe,15,Brand Impersonation,tfidf
+afterglow,15,General,tfidf
+normally,15,General,tfidf
+generic,15,Malicious Link,tfidf
+horse,15,General,tfidf
+glasglow,15,General,tfidf
+fantasybut,15,General,tfidf
+kezdeseimiz,15,General,tfidf
+armm,15,General,tfidf
+ndyi,15,General,tfidf
+pizdet,15,General,tfidf
+elimination,15,General,tfidf
+getherbalsnow,15,Malicious Link,tfidf
+barclays,15,Brand Impersonation,tfidf
+minuet,15,General,tfidf
+ninesigma,15,General,tfidf
+lhl,15,General,tfidf
+fargo,15,Brand Impersonation,tfidf
+realoemsales,15,Malicious Link,tfidf
+shouting,15,General,tfidf
+btc,15,BEC,tfidf
+qdtnmivvmxhe,15,General,tfidf
+dxndeueqjdzo,15,General,tfidf
+bless,15,General,tfidf
+worldvideobusiness,15,BEC,tfidf
+free,15,General,tfidf
+piiis,15,Malicious Link,tfidf
+epimedium,15,Malicious Link,tfidf
+wfs,15,General,tfidf
+taa,15,General,tfidf
+kmq,15,General,tfidf
+gxz,15,General,tfidf
+amnm,15,General,tfidf
+htnetworks,15,General,tfidf
+iso,15,General,tfidf
+mould,15,General,tfidf
+jkoutsi,15,General,tfidf
+graand,15,General,tfidf
+guide,15,General,tfidf
+landlord,15,BEC,tfidf
+beisel,15,General,tfidf
+uvidimsja,15,General,tfidf
+lead,15,General,tfidf
+bitdefender,15,Brand Impersonation,tfidf
+dose,15,Malicious Link,tfidf
+buyherbalsonline,15,Malicious Link,tfidf
+bad,15,General,tfidf
+inl,15,General,tfidf
+kst,15,General,tfidf
+dialectbeograd,15,General,tfidf
+slicetrajectory,15,General,tfidf
+salam,15,General,tfidf
+transfair,15,General,tfidf
+wedding,15,General,tfidf
+div,15,General,tfidf
+unsubscribenow,15,Malicious Link,tfidf
+jphone,15,General,tfidf
+wed,15,General,tfidf
+locker,15,General,tfidf
+dang,15,General,tfidf
+panamilit,15,General,tfidf
+uracil,15,General,tfidf
+tawdry,15,General,tfidf
+dpri,15,General,tfidf
+ourprice,15,BEC,tfidf
+shaved,15,Malicious Link,tfidf
+nanyoost,15,General,tfidf
+wakato,15,General,tfidf
+fri,15,General,tfidf
+know,15,General,tfidf
+doga,15,General,tfidf
+moaje,15,General,tfidf
+allalo,15,General,tfidf
+wachiya,15,General,tfidf
+telefono,15,General,tfidf
+see,15,General,tfidf
+alt,15,General,tfidf
+low,15,General,tfidf
+hotvsnot,15,Malicious Link,tfidf
+entonces,15,General,tfidf
+geecf,15,General,tfidf
+stratify,15,General,tfidf
+ezs,15,General,tfidf
+setupmefree,15,Malicious Link,tfidf
+dental,15,Malicious Link,tfidf
+nepel,15,General,tfidf
+pmoney,15,BEC,tfidf
+ajrule,15,General,tfidf
+oreo,15,General,tfidf
+attachment,15,Malicious Link,tfidf
+charterone,15,Brand Impersonation,tfidf
+doskoro,15,General,tfidf
+iptek,15,General,tfidf
+bmcp,15,General,tfidf
+medgamma,15,Malicious Link,tfidf
+dec,15,General,tfidf
+epfl,15,General,tfidf
+hsw,15,General,tfidf
+gaj,15,General,tfidf
+qgt,15,General,tfidf
+backgammon,15,Malicious Link,tfidf
+handbag,15,General,tfidf
+tschuss,15,General,tfidf
+baze,15,General,tfidf
+xaatrak,15,General,tfidf
+lonelywife,15,Malicious Link,tfidf
+readexcerpt,15,General,tfidf
+sini,15,General,tfidf
+baume,15,General,tfidf
+incest,15,Malicious Link,tfidf
+nanohoost,15,General,tfidf
+usr,15,General,tfidf
+drugease,15,Malicious Link,tfidf
+medsavenow,15,Malicious Link,tfidf
+geec,15,General,tfidf
+agel,15,General,tfidf
+sinalyomm,15,General,tfidf
+agaruka,15,General,tfidf
+ipod,15,General,tfidf
+jzw,15,General,tfidf
+zzw,15,General,tfidf
+vwk,15,General,tfidf
+grh,15,General,tfidf
+tqx,15,General,tfidf
+hangover,15,General,tfidf
+woe,15,General,tfidf
+myfantasysweeps,15,Malicious Link,tfidf
+funforeveryone,15,Malicious Link,tfidf
+embroidery,15,General,tfidf
+shake,15,General,tfidf
+attached,15,Malicious Link,tfidf
+notwill,15,General,tfidf
+sat,15,General,tfidf
+adio,15,General,tfidf
+knewelch,15,General,tfidf
+lapi,15,General,tfidf
+arly,15,General,tfidf
+buczek,15,General,tfidf
+hwyl,15,General,tfidf
+tikn,15,General,tfidf
+lasalle,15,General,tfidf
+sau,15,General,tfidf
+dayonline,15,General,tfidf
+blissfullifestyle,15,Malicious Link,tfidf
+nothing,15,General,tfidf
+holocaustplayboy,15,Malicious Link,tfidf
+document,15,Malicious Link,tfidf
+aere,15,General,tfidf
+sweepsatstake,15,Malicious Link,tfidf
+cursor,15,General,tfidf
+tachometer,15,General,tfidf
+tardes,15,General,tfidf
+trafficmagnet,15,General,tfidf
+wax,15,General,tfidf
+hayes,15,General,tfidf
+sorryi,15,General,tfidf
+nofo,15,General,tfidf
+panda,15,General,tfidf
+morestuff,15,General,tfidf
+porno,15,Malicious Link,tfidf
+tvsr,15,General,tfidf
+wspn,15,General,tfidf
+query,15,General,tfidf
+fig,15,General,tfidf
+pain,15,General,tfidf
+haas,15,General,tfidf
+grasshopper,15,General,tfidf
+dare,15,General,tfidf
+coupon,15,BEC,tfidf
+reminder,15,BEC,tfidf
+psoriasis,15,General,tfidf
+ffa,15,General,tfidf
+salt,15,General,tfidf
+modal,15,General,tfidf
+metaphor,15,General,tfidf
+rmmla,15,General,tfidf
+arabic,15,General,tfidf
+bulk,15,General,tfidf
+algonquian,15,General,tfidf
+fhcg-,15,General,tfidf
+mkii,15,General,tfidf
+dat,15,General,tfidf
+rapide,15,General,tfidf
+mcgill,15,General,tfidf
+hypermedia,15,General,tfidf
+snow,15,General,tfidf
+listserv,15,General,tfidf
+babez,15,Malicious Link,tfidf
+font,15,General,tfidf
+haskins,15,General,tfidf
+fdsl,15,General,tfidf
+amt,15,General,tfidf
+selim,15,General,tfidf
+celiac,15,General,tfidf
+original,15,General,tfidf
+cascadilla,15,General,tfidf
+kid,15,General,tfidf
+bulletin,15,General,tfidf
+beesley,15,General,tfidf
+cardiff,15,General,tfidf
+sumiko,15,General,tfidf
+reduplication,15,General,tfidf
+theory,15,General,tfidf
+uga,15,General,tfidf
+motor,15,General,tfidf
+ppsn,15,General,tfidf
+slrf,15,General,tfidf
+bankruptcy,15,BEC,tfidf
+baseball,15,General,tfidf
+iccl,15,General,tfidf
+accuosto,15,General,tfidf
+weisgerber,15,General,tfidf
+semi-lexical,15,General,tfidf
+bakhtin,15,General,tfidf
+hdl,15,General,tfidf
+hiromi,15,General,tfidf
+macedonian,15,General,tfidf
+definites,15,General,tfidf
+pamsph,15,General,tfidf
+timer,15,General,tfidf
+increased,15,General,tfidf
+learch,15,General,tfidf
+subscriber,15,General,tfidf
+aid=d,15,General,tfidf
+britney,15,General,tfidf
+bonfire,15,General,tfidf
+cxin,15,General,tfidf
+listing,15,BEC,tfidf
+china,15,General,tfidf
+answer-us.com,15,Malicious Link,tfidf
+traderlist.com,15,Malicious Link,tfidf
+channel,15,General,tfidf
+india,15,General,tfidf
+dhttp,15,Malicious Link,tfidf
+dvd,15,General,tfidf
+spam,15,General,tfidf
+cna,15,General,tfidf
+webnet,10,General,tfidf
+barsky,10,General,tfidf
+university,10,General,tfidf
+sitting,10,General,tfidf
+bobby,10,General,tfidf
+distinction,10,General,tfidf
+galore,10,General,tfidf
+pronunciation,10,General,tfidf
+isla,10,General,tfidf
+thessaloniki,10,General,tfidf
+intonation,10,General,tfidf
+preposition,10,General,tfidf
+altus,10,General,tfidf
+jokesu,10,General,tfidf
+hiroshima,10,General,tfidf
+vehicle,10,General,tfidf
+bodomo,10,General,tfidf
+ambra,10,General,tfidf
+listbot,10,General,tfidf
+talked,10,General,tfidf
+tcw,10,General,tfidf
+fasl,10,General,tfidf
+asl,10,General,tfidf
+imperative,10,General,tfidf
+coling-acl,10,General,tfidf
+lancaster,10,General,tfidf
+hacek,10,General,tfidf
+frocos,10,General,tfidf
+rocmelia,10,General,tfidf
+signups,10,General,tfidf
+elra,10,General,tfidf
+diana,10,General,tfidf
+microsoft,10,Brand Impersonation,tfidf
+bruno,10,General,tfidf
+bubbler,10,General,tfidf
+mmu,10,General,tfidf
+yes,10,General,tfidf
+stock,10,BEC,tfidf
+localization,10,General,tfidf
+tuttle,10,General,tfidf
+teacher,10,General,tfidf
+floodgate,10,General,tfidf
+futuresignals,10,General,tfidf
+potsdam,10,General,tfidf
+resource,10,General,tfidf
+whorf,10,General,tfidf
+certificate,10,Credential Phishing,tfidf
+salford,10,General,tfidf
+esslli,10,General,tfidf
+cymfony,10,General,tfidf
+iwpt,10,General,tfidf
+euralex,10,General,tfidf
+subliminal,10,General,tfidf
+kpelle,10,General,tfidf
+tess,10,General,tfidf
+angel,10,General,tfidf
+nek,10,General,tfidf
+metathesis,10,General,tfidf
+chechen,10,General,tfidf
+jespersen,10,General,tfidf
+deliverable,10,General,tfidf
+tok,10,General,tfidf
+eamt,10,General,tfidf
+concurrent,10,General,tfidf
+relevance,10,General,tfidf
+cuban,10,General,tfidf
+aum,10,General,tfidf
+postposition,10,General,tfidf
+aaal,10,General,tfidf
+caught,10,General,tfidf
+navajo,10,General,tfidf
+satiation,10,General,tfidf
+num,10,General,tfidf
+wccfl,10,General,tfidf
+linux,10,General,tfidf
+auto,10,General,tfidf
+shanghaihua,10,General,tfidf
+language,10,General,tfidf
+sex,10,Malicious Link,tfidf
+dash,10,General,tfidf
+deaf,10,General,tfidf
+parasite,10,General,tfidf
+man,10,General,tfidf
+mcwop,10,General,tfidf
+clitics,10,General,tfidf
+mandeville,10,General,tfidf
+naccl-,10,General,tfidf
+optionality,10,General,tfidf
+ncst,10,General,tfidf
+spatial,10,General,tfidf
+recipe,10,General,tfidf
+quaker,10,General,tfidf
+gbp,10,BEC,tfidf
+life,10,General,tfidf
+terminology,10,General,tfidf
+aol,10,Brand Impersonation,tfidf
+bralich,10,General,tfidf
+serrano,10,General,tfidf
+ptas,10,General,tfidf
+hospital,10,General,tfidf
+graph,10,General,tfidf
+stanford,10,General,tfidf
+terkel,10,General,tfidf
+telnet,10,General,tfidf
+iawe,10,General,tfidf
+pheromone,10,General,tfidf
+mahidol,10,General,tfidf
+passive,10,General,tfidf
+uganda,10,General,tfidf
+talc,10,General,tfidf
+classification,10,General,tfidf
+intercultural,10,General,tfidf
+charleston,10,General,tfidf
+pdcid,10,General,tfidf
+cluk,10,General,tfidf
+bristol,10,General,tfidf
+school,10,General,tfidf
+musical,10,General,tfidf
+titus,10,General,tfidf
+icehl,10,General,tfidf
+secol,10,General,tfidf
+palindrome,10,General,tfidf
+armenian,10,General,tfidf
+profiting,10,BEC,tfidf
+galician,10,General,tfidf
+discontinuous,10,General,tfidf
+prospectus,10,General,tfidf
+creole,10,General,tfidf
+soas,10,General,tfidf
+amlap,10,General,tfidf
+report,10,General,tfidf
+germanic,10,General,tfidf
+kroch,10,General,tfidf
+predicate,10,General,tfidf
+reflexive,10,General,tfidf
+gopher,10,General,tfidf
+gemination,10,General,tfidf
+grs,10,General,tfidf
+abc,10,General,tfidf
+asn,10,General,tfidf
+lanka,10,General,tfidf
+ottawa,10,General,tfidf
+evora,10,General,tfidf
+cuba,10,General,tfidf
+citation,10,General,tfidf
+kalaya,10,General,tfidf
+hypertext,10,General,tfidf
+sutton,10,General,tfidf
+japanese,10,General,tfidf
+racer,10,General,tfidf
+lfg,10,General,tfidf
+georgetown,10,General,tfidf
+aace,10,General,tfidf
+pay,10,BEC,tfidf
+csend,10,General,tfidf
+better,10,General,tfidf
+raining,10,General,tfidf
+syntaxis,10,General,tfidf
+possess,10,General,tfidf
+tap,10,General,tfidf
+chiini,10,General,tfidf
+gift,10,General,tfidf
+muc,10,General,tfidf
+rntk,10,General,tfidf
+ganelin,10,General,tfidf
+mhz,10,General,tfidf
+chomsky,10,General,tfidf
+pike,10,General,tfidf
+letter,10,General,tfidf
+eye,10,General,tfidf
+languaging,10,General,tfidf
+wine,10,General,tfidf
+satellite,10,General,tfidf
+cmnw,10,General,tfidf
+images/spacer.gif,10,Malicious Link,tfidf
+//www.vitafactory.com/ad-monday/.gif,10,Malicious Link,tfidf
+//www.vitafactory.com/ad-saturday/.gif,10,Malicious Link,tfidf
+lighting,10,General,tfidf
+fams,10,General,tfidf
+foreclosure,10,BEC,tfidf
+skillmap=,10,General,tfidf
+warranty,10,BEC,tfidf
+s=daff,10,General,tfidf
+//a.e.akamai.net/f///d/images.columbiahouse.com/ch/images/demo/email/clear.gif,10,Malicious Link,tfidf
+swiss,10,General,tfidf
+gaming,10,General,tfidf
+database,10,General,tfidf
+//buy-onlinepills.com/main.php,10,Malicious Link,tfidf
+.us,10,Malicious Link,tfidf
+/spacer.gif,10,Malicious Link,tfidf
+her=,10,General,tfidf
+//www.basetel.com/homebiz,10,Malicious Link,tfidf
+teeth,10,General,tfidf
+//www.pclojack.com/images/email/bullet.gif,10,Malicious Link,tfidf
+color=d,10,General,tfidf
+haberleri,10,General,tfidf
+euro,10,BEC,tfidf
+contest,10,General,tfidf
+usd,10,BEC,tfidf
+breast,10,General,tfidf
+hose,10,General,tfidf
+survey,10,General,tfidf
+/nsi/facial/x_.jpg,10,Malicious Link,tfidf
+porn,10,Malicious Link,tfidf
+planning,10,General,tfidf
+//ukprankcalls.com,10,Malicious Link,tfidf
+recruiter,10,BEC,tfidf
+//www.lotsonet.com/homeopp/,10,Malicious Link,tfidf
+sun,10,General,tfidf
+/images/creative.jpg,10,Malicious Link,tfidf
+norton,10,Brand Impersonation,tfidf
+viapro,10,Malicious Link,tfidf
+tivo,10,Brand Impersonation,tfidf
+iswl-,10,General,tfidf
+degree,10,BEC,tfidf
+here=,10,General,tfidf
+staff,10,General,tfidf
+audible,10,Brand Impersonation,tfidf
+/ids_.gif,10,Malicious Link,tfidf
+bathtub,10,General,tfidf
+seminar,10,General,tfidf
+ibxg,10,General,tfidf
+cable,10,General,tfidf
+timeshare,10,BEC,tfidf
+mlm,10,BEC,tfidf
+bible,10,General,tfidf
+sajfdibpjnjppmhbymschktbn,10,General,tfidf
+denouement,10,General,tfidf
+mom-,10,General,tfidf
+sph-m,10,General,tfidf
+kknpaqpvwqrskayb,10,General,tfidf
+buzisu,10,General,tfidf
+goodloan,10,BEC,tfidf
+cysajo,10,General,tfidf
+wizloan,10,BEC,tfidf
+rfcmd,10,General,tfidf
+ciuxav,10,General,tfidf
+sutnnjt,10,General,tfidf
+nkdcqvht,10,General,tfidf
+qoenj,10,General,tfidf
+doayhf,10,General,tfidf
+cadastramento_faixas.jpg,10,Malicious Link,tfidf
+hhotzsb,10,General,tfidf
+yaypbg,10,General,tfidf
+jalvr,10,General,tfidf
+o'connell,10,General,tfidf
+ttmailer,10,General,tfidf
+kafwfxuzkftwktwciwnkle,10,General,tfidf
+ionsqsdjuiqpfuy,10,General,tfidf
+iuaeffvxbxan,10,General,tfidf
+/div,10,General,tfidf
+christenconclusivedetractdumbbellrepressionattorneyduffelberkshirejoanne,10,General,tfidf
+easygogo,10,General,tfidf
+uaiskcs,10,General,tfidf
+cspmf,10,General,tfidf
+tlkg,10,General,tfidf
+bpsnz,10,General,tfidf
+mkldtynm,10,General,tfidf
+playerstime.com,10,Malicious Link,tfidf
+fhrdofrdzh,10,General,tfidf
+qwyieimob,10,General,tfidf
+itwsprqxrfvpjp,10,General,tfidf
+ekblgkc,10,General,tfidf
+omfcp,10,General,tfidf
+oqobkajxdkuuy,10,General,tfidf
+ostrander,10,General,tfidf
+nugovzgw,10,General,tfidf
+dcesne,10,General,tfidf
+++++++,10,General,tfidf
+vgzbplaxg,10,General,tfidf
+ptarmigan,10,General,tfidf
+marjory,10,General,tfidf
+purport,10,General,tfidf
+dot,10,General,tfidf
+enews,10,General,tfidf
+wqhl,10,General,tfidf
+micp,10,General,tfidf
+zrblnarpilnzrekvt,10,General,tfidf
+wcvvrqvulnl,10,General,tfidf
+untitled-,10,General,tfidf
+saf,10,General,tfidf
+yzbdg,10,General,tfidf
+/html,10,General,tfidf
+xqfcqmai,10,General,tfidf
+backhand,10,General,tfidf
+new-mail,10,General,tfidf
+ffva,10,General,tfidf
+vjeod,10,General,tfidf
+sgsdqaswywo,10,General,tfidf
+hang,10,General,tfidf
+lsiefzcmm,10,General,tfidf
+intersperse,10,General,tfidf
+obtrc,10,General,tfidf
+hrcfajm,10,General,tfidf
+ghjyan,10,General,tfidf
+merpkosjnkr,10,General,tfidf
+wpym,10,General,tfidf
+xroshot,10,General,tfidf
+qsuqx,10,General,tfidf
+nxdfmfro,10,General,tfidf
+puwpfbu,10,General,tfidf
+olgabmppc,10,General,tfidf
+trxrfmyebwy,10,General,tfidf
+moneylife,10,BEC,tfidf
+vxpiisvzv,10,General,tfidf
+yczb,10,General,tfidf
+www.mjfqmmum.socagefh.com,10,Malicious Link,tfidf
+www.adwbasoaiebs.misbornai.com,10,Malicious Link,tfidf
+www.fqnmsfmuqn.hyponymicln.com,10,Malicious Link,tfidf
+www.spvwbaaoaiwta.socagefh.com,10,Malicious Link,tfidf
+slim,10,General,tfidf
+moon,10,General,tfidf
+test,10,General,tfidf
+quqgnui,10,General,tfidf
+osnjtab,10,General,tfidf
+ameo,10,General,tfidf
+jtcbbkn,10,General,tfidf
+lxgyujv,10,General,tfidf
+www.citi-loan.com,10,Malicious Link,tfidf
+mtpc,10,General,tfidf
+www.kc-loan.com,10,Malicious Link,tfidf
+ghycdxtm,10,General,tfidf
+exmwogw,10,General,tfidf
+www.ebzvwipwtxw.corkboardbb.com,10,Malicious Link,tfidf
+copy,10,General,tfidf
+fnweh,10,General,tfidf
+lsy,10,General,tfidf
+zlua,10,General,tfidf
+ezgus,10,General,tfidf
+www.jpxaqfmcqn.tiltlikecm.info,10,Malicious Link,tfidf
+www.ebhixewtawixe.bannerlikedj.com,10,Malicious Link,tfidf
+vnjmgzr,10,General,tfidf

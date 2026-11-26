@@ -1,0 +1,7 @@
+# 測試、關鍵字產生與評估
+-r requirements.txt
+pytest>=9
+pandas>=3
+scikit-learn>=1.9
+numpy>=2.5
+vllm

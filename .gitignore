@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Env
+.env
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Large datasets (download separately, see README)
+data/*.csv
+
+# 本機工作筆記（不公開）
+NOTES.md
+*.bak*
+*PRD.md

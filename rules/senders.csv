@@ -1,0 +1,58 @@
+pattern,list_type,description
+no-reply@goog1e.com,blacklist,網域仿冒：Google (o -> 1)
+@no-reply.google.com,trusted,可疑寄件人名稱，但網域安全
+@paypal.com,trusted,可疑寄件人名稱，但網域安全
+@paypalload.net,blacklist,網域仿冒：PayPal 假冒網域
+@microsoft-security.net,blacklist,網域仿冒：Microsoft Security 假冒網域
+@official-support.com.cn,suspicious,網域仿冒：可疑的 .com.cn 域名，冒充國際服務
+mailserveralert@%,suspicious,寄件人包含 Mail Server Alert，高風險
+security-notice@%,suspicious,寄件人包含 security-notice，高風險
+phishing-source-1@malicious.xyz,blacklist,競賽已知的高風險黑名單地址
+update-login-alert@%,suspicious,寄件人包含「更新登入」警報
+bank-transfer-alert@secure-serv.net,blacklist,假冒銀行轉帳通知，使用可疑網域。
+@amazon.info,blacklist,網域仿冒：Amazon (使用 .info 代替 .on)
+@facebook.biz,blacklist,網域仿冒：Facebook (少了 o，使用 .biz 頂級域名)。
+update-password@%,suspicious,寄件人名稱包含「更新密碼」
+@account-alert-center.com,blacklist,假冒帳號鎖定通知的網域
+@docu-sign.net,blacklist,仿冒：DocuSign 內容索取/驗證。
+invoice-notice@finance-dept.com,blacklist,假冒財務部發票結算郵件
+no-reply@my-custome-portal.com,blacklist,網域仿冒：拼寫錯誤 (custome)。
+@email-verification-service.com,blacklist,網域仿冒：verification-service 等關鍵服務
+@login.verify-portal.cc,blacklist,網域仿冒：使用 verify-portal 關鍵字
+customer-service@apple-support.co,blacklist,網域仿冒：Apple 支援 (使用 .co 而非 .com)
+@microsofto.com,blacklist,網域仿冒：Microsoft (多了 o 字母)。
+account-check@billing.net,blacklist,假冒帳號驗證通知
+login-security@%,suspicious,寄件人名稱包含「登入安全」
+noreply@paypal-security.xyz,blacklist,網域仿冒：PayPal (使用非標準 .xyz)
+hr-payroll-notice@internal.org,blacklist,假冒內部人力資源/薪資通知
+admin@server-health-check.tk,blacklist,假冒系統管理員 (.tk)
+document-share@%,suspicious,寄件人名稱包含「文件分享」
+postmaster-fail@%,suspicious,寄件人包含 Postmaster 或 Mail Failure
+@salesforces-use.net,blacklist,網域仿冒：Salesforce
+helpdesk@service-now-secure.net,blacklist,網域仿冒：假冒 ServiceNow
+@wellsfergo.org,blacklist,網域仿冒：Wells Fargo 銀行 (拼寫錯誤)
+@ceo-urgent.org,blacklist,寄件人名稱包含「CEO-緊急」
+security-audit-report@%,suspicious,寄件人名稱包含「安全稽核報告」
+update-notification-email@%,suspicious,假冒帳號變動通知
+update@linkedin-info.com,blacklist,網域仿冒：LinkedIn
+@dhl-shipping-notice.com,blacklist,網域仿冒：DHL 運輸通知
+support@apple-id-login.com,blacklist,假冒 Apple 官方地址
+document-expiry-alert@%,suspicious,寄件人名稱包含「文件到期警報」
+it-service-alert@%,suspicious,寄件人名稱包含「IT 服務警報」
+notification@microsoft-login.com,blacklist,網域仿冒：Microsoft 登入
+webmail-server-update@%,suspicious,寄件人名稱包含 Webmail Server Update
+ceo-report-share@%,suspicious,寄件人名稱包含「CEO-報告分享」
+noreply@fedex-tracking.net,blacklist,網域仿冒：FedEx 快捷追蹤
+@dropbox-storage-full.com,blacklist,網域仿冒：假冒 Dropbox
+@internal-policy-update.com,blacklist,網域仿冒：內部政策發布更新
+@nportelbank.co.uk,blacklist,網域仿冒：Nportel 銀行
+@dhlicargo-track.org,blacklist,網域仿冒：DHL 貨物追蹤
+security-ticket-open@%,suspicious,寄件人名稱包含「帳號開啟」
+admin@vpn-access-required.tk,blacklist,假冒 VPN 存取要求 (.tk)
+urgent-suspension@account-services.biz,blacklist,假冒帳號服務中心 (.biz)
+@googie.com,blacklist,網域仿冒：Google (使用數字 1 或大寫 I)
+update@aws-credential.com,blacklist,網域仿冒：假冒 AWS 憑證更新
+noreply-document@customercare-center.com,blacklist,網域仿冒：假冒客服中心
+@noreply.paypai.co,blacklist,網域仿冒：PayPal (拼寫錯誤)
+document-share@docusign-securi.com,blacklist,網域仿冒：假冒 DocuSign
+@paypa1.com,blacklist,使用者確認加入：仿冒寄件網域 (typosquatting)

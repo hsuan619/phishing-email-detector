@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Phishing Letter Judgment</title>
+  <meta name="description" content="釣到你了：基於特徵工程與文本分析的釣魚郵件偵測系統">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    /* 結果框樣式 */
+    .result-box p {
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    /* About Section 漸層背景 */
+    #about {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      padding: 80px 0;
+    }
+
+    #about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    #about .php-email-form {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(10px);
+    }
+
+    #about .text-center h2 {
+      color: #ffffff;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 15px;
+    }
+
+    #about .text-center .text-muted {
+      color: rgba(255, 255, 255, 0.95) !important;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      font-size: 1.1rem;
+    }
+
+    #about .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    #about .form-label {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    #about .form-control {
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 12px;
+      transition: all 0.3s ease;
+    }
+
+    #about .form-control:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+
+    #about .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      border-radius: 50px;
+      padding: 12px 40px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    #about .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .result-box {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .result-box.success {
+      background-color: #d4edda;
+      border: 2px solid #28a745;
+      color: #155724;
+    }
+
+    .result-box.danger {
+      background-color: #f8d7da;
+      border: 2px solid #dc3545;
+      color: #721c24;
+    }
+
+    .result-box ul {
+      margin: 0 0 10px;
+      padding-left: 20px;
+    }
+
+    .result-box .muted {
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .result-box.warning {
+      background-color: #fff3cd;
+      border: 2px solid #ffc107;
+      color: #664d03;
+    }
+
+    .result-box h4 {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .loading {
+      text-align: center;
+      color: #667eea;
+      font-weight: 600;
+      padding: 15px;
+      background: rgba(102, 126, 234, 0.1);
+      border-radius: 8px;
+    }
+
+    .sent-message {
+      text-align: center;
+      color: #28a745;
+      font-weight: 600;
+      padding: 15px;
+      background: rgba(40, 167, 69, 0.1);
+      border-radius: 8px;
+    }
+
+    .error-message {
+      text-align: center;
+      color: #dc3545;
+      font-weight: 600;
+      padding: 15px;
+      background: rgba(220, 53, 69, 0.1);
+      border-radius: 8px;
+    }
+
+    /* ===== 教育中心樣式 ===== */
+    #services {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 80px 0;
+    }
+
+    .education-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      height: 100%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .education-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .icon-box {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2.5rem;
+      color: white;
+    }
+
+    .danger-icon {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .success-icon {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .warning-icon {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+
+    .example-box {
+      background: #f8f9fa;
+      border-left: 4px solid #dc3545;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .safe-example-box {
+      border-left-color: #28a745;
+    }
+
+    .tip-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tip-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #e9ecef;
+      display: flex;
+      align-items: start;
+    }
+
+    .tip-list li:last-child {
+      border-bottom: none;
+    }
+
+    .tip-list i {
+      color: #667eea;
+      margin-right: 10px;
+      font-size: 1.2rem;
+      margin-top: 3px;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    #services .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    #services .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    #services .section-title p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    /* 威脅類型 hashtag chips */
+    .threat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 6px 0 12px;
+    }
+
+    .threat-chip {
+      display: inline-block;
+      padding: 3px 11px;
+      border-radius: 999px;
+      background: rgba(220, 53, 69, 0.12);
+      color: #a71d2a;
+      font-size: 0.85em;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .block-suggest {
+      margin-top: 14px;
+      padding: 12px;
+      border: 1px solid #f0c36d;
+      background: #fff8e6;
+      border-radius: 8px;
+    }
+
+    .block-btn {
+      margin-top: 6px;
+      margin-right: 10px;
+      padding: 6px 14px;
+      border: 0;
+      border-radius: 6px;
+      background: #c0392b;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    .block-btn:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">Phishing Letter Judgment</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">Letter</a></li>
+          <li><a href="#services">EDUCATION CENTER</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="cta-btn" href="#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+    <img src="assets/img/hero.jpg" alt="" data-aos="fade-in">
+
+      <div class="container d-flex flex-column align-items-center">
+        <h2 data-aos="fade-up" data-aos-delay="100">Phishing email comparison</h2>
+        <p data-aos="fade-up" data-aos-delay="200">請輸入您收到的電子郵件地址及內容 我們將為您判斷是否為釣魚郵件</p>
+        <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+          <a href="#about" class="btn-get-started">Get Started</a>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-center mb-4">
+              <h2>輸入您收到的內容</h2>
+              <p class="text-muted">請輸入寄件人電子郵件地址與文字內容（兩者至少填一項）</p>
+            </div>
+
+            <form id="textInputForm" style="background: rgba(255, 255, 255, 0.95); padding: 40px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); position: relative; z-index: 1; backdrop-filter: blur(10px);">
+              <div class="row gy-4">
+
+                <div class="col-12">
+                  <label for="userEmail" class="form-label">寄件人電子郵件地址</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="userEmail"
+                    name="userEmail"
+                    placeholder="請輸入寄件人電子郵件地址...">
+                </div>
+
+                <div class="col-12">
+                  <label for="userInput" class="form-label">您收到的文字內容</label>
+                  <textarea
+                    class="form-control"
+                    id="userInput"
+                    name="userInput"
+                    rows="10"
+                    placeholder="請在此輸入您收到的文字內容..."></textarea>
+                </div>
+
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary btn-lg px-5">🔍 確認送出</button>
+                </div>
+
+                <div class="col-12">
+                  <div class="loading" style="display: none;">⏳ 分析中，請稍候...</div>
+                  <div class="error-message" style="display: none;"></div>
+                  <div class="sent-message" style="display: none;"></div>
+                </div>
+
+                <div class="col-12">
+                  <div id="resultBox" class="result-box"></div>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- 教育中心 Section -->
+    <section id="services" class="services section">
+      <div class="container">
+
+        <!-- Section Title -->
+        <div class="section-title" data-aos="fade-up">
+          <h2>🎓 釣魚郵件教育中心</h2>
+          <p>了解釣魚郵件的常見手法，保護您的資訊安全</p>
+        </div>
+
+        <!-- 常見釣魚手法 -->
+        <div class="row gy-4 mb-5">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="education-card">
+              <div class="icon-box danger-icon">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+              </div>
+              <h3 class="text-center mb-3">🎣 緊急通知詐騙</h3>
+              <p class="text-muted">假冒銀行、政府機關或知名企業，聲稱您的帳戶出現異常，要求立即點擊連結驗證身份。</p>
+              <div class="example-box mt-3">
+                <strong>⚠️ 範例：</strong>
+                <p class="mb-0 mt-2">"您的銀行帳戶已被凍結！請立即點擊以下連結驗證身份，否則將永久停用。"</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="education-card">
+              <div class="icon-box warning-icon">
+                <i class="bi bi-gift-fill"></i>
+              </div>
+              <h3 class="text-center mb-3">🎁 中獎通知詐騙</h3>
+              <p class="text-muted">宣稱您中了大獎或獲得免費禮物，但需要先提供個人資料或支付手續費才能領取。</p>
+              <div class="example-box mt-3">
+                <strong>⚠️ 範例：</strong>
+                <p class="mb-0 mt-2">"恭喜您中了 iPhone 15 Pro！請點擊連結填寫收件資料，僅需支付 299 元運費。"</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="education-card">
+              <div class="icon-box">
+                <i class="bi bi-person-fill-lock"></i>
+              </div>
+              <h3 class="text-center mb-3">🔐 密碼重設詐騙</h3>
+              <p class="text-muted">假裝是系統通知，要求您重設密碼或更新帳戶資訊，實際上是要竊取您的登入憑證。</p>
+              <div class="example-box mt-3">
+                <strong>⚠️ 範例：</strong>
+                <p class="mb-0 mt-2">"您的密碼即將過期，請點擊以下連結立即更新，以免影響使用。"</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 真實案例對比 -->
+        <div class="row mb-5">
+          <div class="col-12" data-aos="fade-up">
+            <div class="education-card">
+              <h3 class="text-center mb-4">🔍 真實案例對比</h3>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="text-danger"><i class="bi bi-x-circle-fill"></i> 釣魚郵件特徵</h5>
+                  <div class="example-box">
+                    <ul class="mb-0">
+                      <li>寄件者地址可疑（如 support@bank-secure123.com）</li>
+                      <li>充滿緊迫感的語氣</li>
+                      <li>要求點擊不明連結</li>
+                      <li>要求提供密碼或信用卡資訊</li>
+                      <li>有明顯的文法或拼寫錯誤</li>
+                      <li>威脅帳戶將被停用</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <h5 class="text-success"><i class="bi bi-check-circle-fill"></i> 正常郵件特徵</h5>
+                  <div class="example-box safe-example-box">
+                    <ul class="mb-0">
+                      <li>來自官方認證的電子郵件地址</li>
+                      <li>語氣專業且不帶威脅</li>
+                      <li>提供官方客服聯絡方式</li>
+                      <li>不會要求提供敏感資訊</li>
+                      <li>內容清晰，無明顯錯誤</li>
+                      <li>有完整的公司資訊和免責聲明</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 防範技巧 -->
+        <div class="row">
+          <div class="col-12" data-aos="fade-up">
+            <div class="education-card">
+              <div class="icon-box success-icon mx-auto mb-4">
+                <i class="bi bi-shield-fill-check"></i>
+              </div>
+              <h3 class="text-center mb-4">🛡️ 防範技巧指南</h3>
+
+              <div class="accordion" id="tipsAccordion">
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tip1">
+                      <i class="bi bi-1-circle-fill me-2"></i> 檢查寄件者地址
+                    </button>
+                  </h2>
+                  <div id="tip1" class="accordion-collapse collapse show" data-bs-parent="#tipsAccordion">
+                    <div class="accordion-body">
+                      <ul class="tip-list">
+                        <li><i class="bi bi-check-circle-fill"></i> <span>仔細檢查寄件者的電子郵件地址，確認是否來自官方網域</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>注意相似字元的替換（如 0 替代 O，rn 替代 m）</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>可疑時直接聯絡官方客服確認</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip2">
+                      <i class="bi bi-2-circle-fill me-2"></i> 不要輕易點擊連結
+                    </button>
+                  </h2>
+                  <div id="tip2" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+                    <div class="accordion-body">
+                      <ul class="tip-list">
+                        <li><i class="bi bi-check-circle-fill"></i> <span>將滑鼠移到連結上（不要點擊），檢查實際網址</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>直接在瀏覽器輸入官方網址，不要透過郵件連結</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>使用網址安全檢查工具驗證連結</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip3">
+                      <i class="bi bi-3-circle-fill me-2"></i> 保護個人資訊
+                    </button>
+                  </h2>
+                  <div id="tip3" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+                    <div class="accordion-body">
+                      <ul class="tip-list">
+                        <li><i class="bi bi-check-circle-fill"></i> <span>絕不透過電子郵件提供密碼、信用卡號等敏感資訊</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>啟用雙重驗證（2FA）增加帳戶安全性</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>定期更換密碼，使用強密碼組合</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip4">
+                      <i class="bi bi-4-circle-fill me-2"></i> 使用安全工具
+                    </button>
+                  </h2>
+                  <div id="tip4" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+                    <div class="accordion-body">
+                      <ul class="tip-list">
+                        <li><i class="bi bi-check-circle-fill"></i> <span>安裝並更新防毒軟體和防火牆</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>使用我們的釣魚郵件檢測工具進行分析</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>啟用電子郵件的垃圾郵件過濾功能</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="text-center mt-4">
+                <a href="#about" class="btn btn-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 50px; padding: 12px 40px;">
+                  <i class="bi bi-shield-check me-2"></i>立即檢測您的郵件
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /教育中心 Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container text-center py-4">
+      <p class="mb-1">釣到你了：基於特徵工程與文本分析的釣魚郵件偵測系統</p>
+      <p class="mb-1">2025 法遵科技與電腦稽核專題競賽 大專院校組 冠軍作品</p>
+      <div class="credits small">
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom Form Handler -->
+  <script>
+    const API_URL = '/api/check-phishing';
+    const LEVEL_TEXT = {
+      High: { title: '⚠️ 高風險：這很可能是釣魚郵件！', css: 'danger' },
+      Medium: { title: '⚠️ 中風險：這封郵件有可疑特徵', css: 'warning' },
+      Low: { title: '✅ 低風險：這封郵件看起來正常', css: 'success' },
+    };
+
+    // 所有使用者輸入與後端回傳內容一律以 textContent 寫入，避免 XSS
+    function el(tag, text, className) {
+      const node = document.createElement(tag);
+      if (text !== undefined) node.textContent = text;
+      if (className) node.className = className;
+      return node;
+    }
+
+    function findingList(items, emptyText) {
+      if (items.length === 0) return el('p', emptyText);
+      const ul = el('ul');
+      items.forEach(f => ul.appendChild(el('li', `${f.detail}（+${f.score}${f.rule ? '，' + f.rule : ''}）`)));
+      return ul;
+    }
+
+    // LLM 原生威脅類型 → 中文（以 hashtag chip 呈現）；未知標籤顯示原字串
+    const THREAT_ZH = {
+      CREDENTIAL_REQUEST: '要求憑證',
+      DOMAIN_MISMATCH: '網域不符',
+      URL_DISCREPANCY: '連結異常',
+      TOO_GOOD_TO_BE_TRUE: '好康可疑',
+      PROMPT_INJECTION: '提示注入',
+      URGENCY_FEAR: '製造急迫',
+      REPLY_TO_MISMATCH: '回覆位址不符',
+      GENERIC_SALUTATION: '籠統稱呼',
+      ANOMALOUS_TIMING: '異常寄送時間',
+      MISSING_SIGNATURE: '缺少署名',
+      GRAMMAR_ANOMALY: '文法異常',
+    };
+
+    function threatChips(threats) {
+      const wrap = el('div', undefined, 'threat-chips');
+      threats.forEach(t => wrap.appendChild(el('span', '#' + (THREAT_ZH[t] || t), 'threat-chip')));
+      return wrap;
+    }
+
+    function llmNode(data) {
+      const a = data.llmAnalysis;
+      const st = data.llmStatus || {};
+      if (!a) {
+        if (st.status && st.status !== 'not_provided' && st.status !== 'ok') {
+          const w = el('div');
+          w.appendChild(el('strong', '內容分析'));
+          w.appendChild(el('p', st.detail || st.status, 'muted'));
+          return w;
+        }
+        return null;
+      }
+      const w = el('div');
+      w.appendChild(el('strong', '內容分析'));
+      // fraud 模型在「看起來正常」時仍常吐出矛盾的標籤與理由，一律不顯示以免誤導。
+      if (a.is_fraud) {
+        if (a.detected_threats && a.detected_threats.length) {
+          w.appendChild(threatChips(a.detected_threats));
+        }
+        const reason = a.reason;
+        const suggestion = a.suggestion;
+        if (reason) w.appendChild(el('p', '理由：' + reason));
+        if (suggestion) w.appendChild(el('p', '建議：' + suggestion));
+      }
+      return w;
+    }
+
+    // 疑似仿冒網域（typosquatting）：顯示建議，由使用者按鈕確認後才加入黑名單（人工把關，非自動）
+    function typosquatNode(data) {
+      const a = data.llmAnalysis;
+      if (!a || a.is_typosquat !== true) return null;
+      const domain = (data.email || '').split('@')[1];
+      if (!domain) return null;
+      const pattern = '@' + domain;
+      const wrap = el('div', undefined, 'block-suggest');
+      wrap.appendChild(el('p', `⚠️ 寄件網域 ${pattern} 疑似仿冒知名機構。`));
+      const status = el('span', '', 'muted');
+      const btn = el('button', `加入黑名單`, 'block-btn');
+      btn.type = 'button';
+      btn.addEventListener('click', async () => {
+        btn.disabled = true;
+        const label = btn.textContent;
+        btn.textContent = '加入中…';
+        try {
+          const resp = await fetch('/api/blocklist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pattern }),
+          });
+          const r = await resp.json();
+          if (resp.ok) {
+            btn.remove();
+            status.textContent = r.added ? `✓ 已將 ${r.pattern} 加入黑名單` : `✓ ${r.pattern} 已在黑名單中`;
+          } else {
+            btn.disabled = false; btn.textContent = label;
+            status.textContent = '加入失敗：' + (r.error || '請稍後再試');
+          }
+        } catch (_) {
+          btn.disabled = false; btn.textContent = label;
+          status.textContent = '加入失敗：無法連線';
+        }
+      });
+      wrap.appendChild(btn);
+      wrap.appendChild(status);
+      return wrap;
+    }
+
+    function renderResult(box, data) {
+      const level = LEVEL_TEXT[data.riskLevel];
+      box.className = 'result-box ' + level.css;
+      const children = [el('h4', level.title)];
+      (data.overrides || []).forEach(o => children.push(el('p', '＊ ' + o, 'muted')));
+      children.push(
+        el('strong', '寄件者分析'),
+        findingList(data.senderFindings, '未發現異常'),
+        llmNode(data),
+        typosquatNode(data),
+      );
+      children.push(el('p', `寄件者：${data.email || '（未提供）'}`, 'muted'));
+      children.push(
+        el('strong', `內容關鍵字（命中 ${data.keywordHits.length} 個）`),
+        findingList(data.keywordHits, '未命中關鍵字'),
+      );
+      box.replaceChildren(...children.filter(Boolean));
+      box.style.display = 'block';
+    }
+
+    // 貼上富文字郵件時，純 textarea 會丟掉超連結的真實網址（href），只留看得到的文字。
+    // 「顯示文字 ≠ 實際網址」是釣魚信最關鍵特徵之一，這裡從 text/html 把真實網址抽出來附加到內容，
+    // 讓偵測器與 LLM 都看得到，並能直接比對出文字/網址不符。
+    document.getElementById('userInput').addEventListener('paste', function (e) {
+      const cd = e.clipboardData || window.clipboardData;
+      if (!cd) return;
+      const html = cd.getData('text/html');
+      const plain = cd.getData('text/plain');
+      if (!html) return; // 純文字貼上，維持瀏覽器預設行為
+      const urls = [];
+      try {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const seen = new Set();
+        doc.querySelectorAll('a[href]').forEach(function (a) {
+          const href = (a.getAttribute('href') || '').trim();
+          if (!/^https?:\/\//i.test(href) || seen.has(href)) return; // 只收 http(s)，跳過 mailto/#/javascript
+          if (plain && plain.indexOf(href) !== -1) return;           // 網址已明文出現在可見文字就不重複附加
+          seen.add(href);
+          const label = (a.textContent || '').replace(/\s+/g, ' ').trim();
+          urls.push(label ? `顯示文字：${label} → 實際網址：${href}` : `實際網址：${href}`);
+        });
+      } catch (_) { return; } // 解析失敗就交回預設貼上
+      if (!urls.length) return; // 沒有可擷取的隱藏連結
+      e.preventDefault();
+      const block = `${plain}\n\n──── 內嵌連結（系統自動擷取，供偵測比對）────\n${urls.join('\n')}`;
+      let ok = false;
+      try { ok = document.execCommand && document.execCommand('insertText', false, block); } catch (_) { ok = false; }
+      if (!ok) { // execCommand 不可用時手動在游標處插入
+        const ta = this, s = ta.selectionStart, en = ta.selectionEnd;
+        ta.value = ta.value.slice(0, s) + block + ta.value.slice(en);
+        ta.selectionStart = ta.selectionEnd = s + block.length;
+      }
+    });
+
+    document.getElementById('textInputForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const loading = this.querySelector('.loading');
+      const errorMessage = this.querySelector('.error-message');
+      const sentMessage = this.querySelector('.sent-message');
+      const resultBox = document.getElementById('resultBox');
+
+      const email = document.getElementById('userEmail').value.trim();
+      const content = document.getElementById('userInput').value;
+
+      errorMessage.style.display = 'none';
+      sentMessage.style.display = 'none';
+      resultBox.style.display = 'none';
+
+      if (!email && !content.trim()) {
+        errorMessage.replaceChildren(el('strong', '❌ 請至少填寫寄件者 Email 或內容'));
+        errorMessage.style.display = 'block';
+        return;
+      }
+      loading.style.display = 'block';
+
+      try {
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, content }),
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || '伺服器錯誤');
+
+        renderResult(resultBox, data);
+        sentMessage.textContent = '✅ 分析完成！';
+        sentMessage.style.display = 'block';
+        setTimeout(() => { sentMessage.style.display = 'none'; }, 3000);
+      } catch (error) {
+        errorMessage.replaceChildren(el('strong', '❌ 發生錯誤'), el('div', error.message));
+        errorMessage.style.display = 'block';
+        console.error('Error:', error);
+      } finally {
+        loading.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+
+</html>

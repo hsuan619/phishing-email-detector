@@ -1,0 +1,89 @@
+keyword,score,category,source
+立即點擊,20,Malicious Link,manual-zh
+帳號鎖定,20,Brand Impersonation,manual-zh
+密碼過期,20,Brand Impersonation,manual-zh
+重新驗證,20,Credential Phishing,manual-zh
+重要更新,20,Brand Impersonation,manual-zh
+提供您的,20,Credential Phishing,manual-zh
+信用卡,20,BEC,manual-zh
+匯款,20,BEC,manual-zh
+機密資訊,20,Credential Phishing,manual-zh
+緊急,15,BEC,manual-zh
+限時處理,15,BEC,manual-zh
+通知,15,Brand Impersonation,manual-zh
+發票,15,BEC,manual-zh
+未付款,15,BEC,manual-zh
+需要行動,15,BEC,manual-zh
+文件,15,Malicious Link,manual-zh
+附件,15,Malicious Link,manual-zh
+服務申請,15,Credential Phishing,manual-zh
+新訊息,10,General,manual-zh
+最新消息,10,General,manual-zh
+中獎,10,General,manual-zh
+優惠,10,General,manual-zh
+親愛的用戶,10,General,manual-zh
+account locked,20,Brand Impersonation,manual
+security alert,20,Brand Impersonation,manual
+account expired,20,Brand Impersonation,manual
+authentication,20,Credential Phishing,manual
+authorize,20,Credential Phishing,manual
+biometrics,20,Credential Phishing,manual
+confidentiality,20,Credential Phishing,manual
+credential,20,Credential Phishing,manual
+deposit,20,BEC,manual
+finance,20,BEC,manual
+identity,20,Credential Phishing,manual
+login,20,Credential Phishing,manual
+password,20,Credential Phishing,manual
+payoff,20,BEC,manual
+payment,20,BEC,manual
+paypal,20,Brand Impersonation,manual
+purchase,20,BEC,manual
+reimbursement,20,BEC,manual
+token,20,Credential Phishing,manual
+transaction,20,BEC,manual
+wire,20,BEC,manual
+wiring,20,BEC,manual
+icloud,20,Brand Impersonation,manual
+bank,20,Brand Impersonation,manual
+limited time,20,BEC,manual
+confirm,20,Credential Phishing,manual
+validate,20,Credential Phishing,manual
+verify,20,Credential Phishing,manual
+accountinfo,15,Credential Phishing,manual
+alert,15,Brand Impersonation,manual
+balance,15,BEC,manual
+billing,15,BEC,manual
+billinginfo,15,BEC,manual
+cancel,15,BEC,manual
+confirmation,15,Credential Phishing,manual
+doc,15,Malicious Link,manual
+invoice,15,BEC,manual
+invoiceinfo,15,BEC,manual
+loan,15,BEC,manual
+notify,15,Brand Impersonation,manual
+notification,15,Brand Impersonation,manual
+orderinfo,15,BEC,manual
+pdf,15,Malicious Link,manual
+shipment,15,BEC,manual
+suspicious,15,Brand Impersonation,manual
+assurance,10,General,manual
+availability,10,General,manual
+lock,10,General,manual
+mailbox,10,General,manual
+privilege,10,General,manual
+profile,10,General,manual
+receipt,10,BEC,manual
+remittance,10,BEC,manual
+reward,10,General,manual
+safety,10,General,manual
+session,10,General,manual
+statement,10,BEC,manual
+validation,10,General,manual
+assistant,10,General,manual
+communication,10,General,manual
+dashboard,10,General,manual
+emails,10,General,manual
+portal,10,General,manual
+ACH,10,BEC,manual
+folio,10,BEC,manual
